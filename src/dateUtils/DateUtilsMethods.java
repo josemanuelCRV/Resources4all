@@ -16,9 +16,11 @@ public class DateUtilsMethods {
 	
 	private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private static final DateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private static final DateFormat sdf3 = new SimpleDateFormat("Z");
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy/MM/dd'T'HH:mm:ss.SSS");
     private static final DecimalFormat DF = new DecimalFormat("000");
+    
     
 	public static void main(String[] args) {
 
@@ -31,12 +33,14 @@ public class DateUtilsMethods {
 		System.out.println("Date:\n " + date + "\n");
 		System.out.println("Date Millis:\n " + date.getTime() + "\n");
         System.out.println("Date formatted:\n " + sdf.format(date) + "\n");
+        System.out.println("Date formatted 3:\n " + sdf3.format(date) + "\n");
         System.out.println("-----------------------------------------------\n");
                     
         
         Calendar cal = Calendar.getInstance();
         System.out.println("Calendar - getTime():\n " + cal.getTime() + "\n");
         System.out.println("Calendar formatted2 - getTime():\n " + sdf2.format(cal.getTime()) + "\n");
+        System.out.println("Calendar RFC822TimeZone formatted - getTime():\n " + sdf3.format(cal.getTime()) + "\n");
         System.out.println("Calendar TimeInMillis - getTimeInMillis():\n " + cal.getTimeInMillis() + "\n");
         System.out.println("Calendar DisplayName - getTimeZone().getDisplayName():\n " + cal.getTimeZone().getDisplayName() + "\n");
         System.out.println("Calendar TimeZone ID - getTimeZone().getID():\n " + cal.getTimeZone().getID() + "\n");
@@ -63,7 +67,11 @@ public class DateUtilsMethods {
         System.out.println("LocalDate:\n " + localDate + "\n");
         System.out.println("LocalDate formatted:\n " + DateTimeFormatter.ofPattern("yyy/MM/dd").format(localDate));
         System.out.println("-----------------------------------------------\n");
-                       
+               
+        
+        
+        
+        
 	}
 
 
